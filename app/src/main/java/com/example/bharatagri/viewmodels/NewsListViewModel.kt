@@ -1,7 +1,6 @@
 package com.example.bharatagri.viewmodels
 
 import android.app.Application
-import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -17,6 +16,7 @@ import kotlinx.coroutines.launch
 class NewsListViewModel @ViewModelInject
 constructor(application: Application, private val apiCallNewsListUsecase: NewsListUsecase) :
     AndroidViewModel(application) {
+    var avoidObservingTwice=true
     private val movieMutableListLiveData: MutableLiveData<DataState<NewsArticleResponse?>> = MutableLiveData()
     val movieListLiveData: LiveData<DataState<NewsArticleResponse?>>
         get() = movieMutableListLiveData
@@ -25,10 +25,9 @@ constructor(application: Application, private val apiCallNewsListUsecase: NewsLi
         viewModelScope.launch {
                         apiCallNewsListUsecase.executeMovieList(page).onEach { dataState ->
                             movieMutableListLiveData.value = dataState
-                            movieMutableListLiveData.value =DataState.Default
+                            if(dataState.statusCode==200)
+                                movieMutableListLiveData.value= DataState.Default
                         }.launchIn(viewModelScope)
         }
     }
-
-
 }

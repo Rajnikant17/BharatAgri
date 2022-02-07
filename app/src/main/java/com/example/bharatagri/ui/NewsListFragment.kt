@@ -1,6 +1,7 @@
 package com.example.bharatagri.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
@@ -20,9 +21,10 @@ class NewsListFragment : ListItemFragment<MovieListAdapter, FragmentNewsListBind
     override val fragmentLayoutResId: Int
         get() = R.layout.fragment_news_list
     private val newsListViewModel: NewsListViewModel by viewModels()
-
-    var boolean=true
     lateinit var navController: NavController
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
@@ -65,6 +67,7 @@ class NewsListFragment : ListItemFragment<MovieListAdapter, FragmentNewsListBind
     }
 
     override fun removeLoadingItem() {
+        Log.d("xdfgfdxdxkj", (adapter.itemCount-1).toString())
         removeLoadingItem(adapter.itemCount-1,adapter.getItems())
     }
 
