@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivNews"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:scaleType="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="Todays News is about the authuntication of Nework" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivNews"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:alpha=".8"
+        android:gravity="center_vertical"
+        android:scaleType="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="Todays News is about the authuntication of Nework" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="20dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSource"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivNews"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:scaleType="center"
+        tools:text="Source" />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPublishedDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivNews"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="7dp"
+        android:gravity="center_vertical"
+        android:scaleType="center"
+        tools:text="12 Aug '2022" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNews"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerVertical="true"
+             android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:background="@color/purple_light"
+            android:scaleType="fitXY" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ivNews"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:gravity="center_vertical"
+        android:scaleType="center"
+        android:layout_marginBottom="20dp"
+        tools:text="Content" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>

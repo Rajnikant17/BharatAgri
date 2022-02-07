@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="newsArticleList"
+            type="com.example.bharatagri.repository.NewsArticle" />
+        <variable
+            name="newsSource"
+            type="com.example.bharatagri.repository.NewsSource" />
+        <variable
+            name="itemClickListener"
+            type="com.example.bharatagri.utils.RecycleViewItemViewClickListener" />
+    </data>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginBottom="15dp"
+    android:onClick="@{() ->  itemClickListener.onClick(newsArticleList)}"
+    app:cardElevation="1dp"
+    app:cardCornerRadius="5dp"
+    android:id="@+id/cv_image"
+    >
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:paddingBottom="20dp"
+       >
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/ivNews"
+           android:layout_width="match_parent"
+           android:layout_height="170dp"
+           android:scaleType="fitXY" />
+
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tvTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/ivNews"
+           android:layout_marginHorizontal="15dp"
+           android:layout_marginTop="20dp"
+           android:gravity="center_vertical"
+           android:scaleType="center"
+           android:text="@{newsArticleList.title}"
+           android:textColor="@color/black"
+           android:textSize="16sp"
+           android:textStyle="bold"
+           tools:text="Todays News is about the authuntication of Nework" />
+
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tvSource"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tvTitle"
+           android:layout_marginHorizontal="15dp"
+           android:layout_marginTop="12dp"
+           android:gravity="center_vertical"
+           android:scaleType="center"
+           android:text="@{newsSource.name}"
+           android:textSize="14sp"
+           tools:text="Business Today" />
+
+       <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tvPublishedDate"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tvTitle"
+           android:layout_alignParentEnd="true"
+           android:layout_marginHorizontal="15dp"
+           android:layout_marginTop="12dp"
+           android:gravity="center_vertical"
+           android:scaleType="center"
+           android:textSize="14sp"
+           tools:text="20 July 20 April" />
+   </RelativeLayout>
+
+<!--    android:text="@{newsArticleList.publishedAt}"-->
+
+</androidx.cardview.widget.CardView>
+</layout>
