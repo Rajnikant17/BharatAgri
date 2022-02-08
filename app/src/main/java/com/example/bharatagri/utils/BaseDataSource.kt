@@ -5,6 +5,7 @@ import retrofit2.HttpException
 import retrofit2.Response
 import java.io.EOFException
 import java.net.HttpURLConnection
+import java.net.UnknownHostException
 import javax.net.ssl.HttpsURLConnection
 import javax.net.ssl.SSLHandshakeException
 
@@ -61,6 +62,11 @@ abstract class BaseDataSource {
             e.printStackTrace()
             Log.e("BaseDataSource", "Exception occurred", e)
             return error(HttpURLConnection.HTTP_GATEWAY_TIMEOUT,e.message ?: e.toString())
+        }
+        catch (e: UnknownHostException) {
+            e.printStackTrace()
+            Log.e("BaseDataSource", "Exception occurred", e)
+            return error(HttpURLConnection.HTTP_INTERNAL_ERROR,"Something went wrong" ?: e.toString())
         }
         catch (e: Exception) {
             e.printStackTrace()
