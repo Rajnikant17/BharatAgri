@@ -1,7 +1,6 @@
 package com.example.bharatagri.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
@@ -70,7 +69,6 @@ class NewsListFragment : ListItemFragment<MovieListAdapter, FragmentNewsListBind
     }
 
     override fun removeLoadingItem() {
-        Log.d("xdfgfdxdxkj", (adapter.itemCount - 1).toString())
         removeLoadingItem(adapter.itemCount - 1, adapter.getItems())
     }
 

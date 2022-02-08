@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 class NewsListViewModel @ViewModelInject
 constructor(application: Application, private val apiCallNewsListUsecase: NewsListUsecase) :
     AndroidViewModel(application) {
-    var avoidObservingTwice=true
     private val movieMutableListLiveData: MutableLiveData<DataState<NewsArticleResponse?>> = MutableLiveData()
     val movieListLiveData: LiveData<DataState<NewsArticleResponse?>>
         get() = movieMutableListLiveData

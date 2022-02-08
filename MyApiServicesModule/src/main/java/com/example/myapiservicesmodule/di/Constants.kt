@@ -2,7 +2,6 @@ package com.example.myapiservicesmodule.di
 
 class Constants {
     companion object {
-//        const val BASEURL = "http://www.omdbapi.com"
         const val BASEURL = "https://newsapi.org"
         const val country = "us"
         const val pageSize = "10"
